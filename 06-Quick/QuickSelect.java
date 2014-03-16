@@ -1,4 +1,4 @@
-public class QuickSort{
+public class QuickSelect{
 
     public int QuickSelect(int[] a, int L,  int H, int k){
 	if(L >= H){
