@@ -1,17 +1,30 @@
-public class MyLinkedList{
+import java.io.*;
+import java.util.*;
 
-	private Node head;
+public class MyLinkedList<E> implements Iterable<E>{
+	private Node head, tail;
 
+    public Iterator<E> iterator() {
+	return new myLLIterator<E>(head);
+    }
 
 	public MyLinkedList(){
-		head = null;
+		head = new Node("Dummy");
+		tail = head;
 	}
 
+	// Adds to the end of the list
 	public void add(String s){
 		Node temp = new Node(s);
-		temp.setNext(head);		
-		head = temp;
+		Node current = head;
+		while(current.getNext() != null){
+			current = current.getNext();
+		}
+		current.setNext(temp);
+		tail = temp;	
+		//System.out.println(tail.getData());
 	}
+
 	public void add(int i, String s){
 		Node temp = new Node(s);
 		Node current = head;
@@ -22,6 +35,10 @@ public class MyLinkedList{
 		}
 		temp.setNext(current.getNext());
 		current.setNext(temp);
+		if(temp.getNext() == null){
+			tail = temp;
+		}
+		//System.out.println(tail.getData());
 	}
 
 	public String toString(){
@@ -52,6 +69,10 @@ public class MyLinkedList{
 			count++;
 		}
 		current.setData(s);
+		if(current.getNext() != null){
+			tail = current;
+		}
+		System.out.println(tail.getData());
 	}
 
 	public String remove(int i){
@@ -61,8 +82,16 @@ public class MyLinkedList{
 			current = current.getNext();
 			count++;
 		}
-		String temp = current.getNext().getData();
-		current.setNext(current.getNext().getNext());
+		String temp;
+		if(current.getNext().getNext() == null){
+			tail = current;
+			temp = current.getNext().getData();
+			current.setNext(null);
+		} else {
+			temp = current.getNext().getData();
+			current.setNext(current.getNext().getNext());
+		}
+		System.out.println(tail.getData());
 		return temp;
 	}
 
