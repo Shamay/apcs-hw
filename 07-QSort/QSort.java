@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class QSort{
 
 	public static void QuickSort(int[] a, int L,  int H){
-	if(H-L < 2){
+	if(H-L < 1){
 	    return;
 	}else{
 	//  pivot is leftmost element
