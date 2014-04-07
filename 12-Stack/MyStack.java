@@ -11,6 +11,7 @@ public class MyStack {
 	// top = null;
 	elements = new Node[10];
 	numElts = 0;
+	size = 10;
     }
 
     public void grow(){
