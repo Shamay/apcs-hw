@@ -4,8 +4,7 @@ import java.io.*;
 public class RPN{
 
     // Idea taken from Cardy to scan a String of input
-    public static void calculate(String input){
-	MyStack stack = new MyStack();
+    public void calculate(String input, MyStack stack){
 	String[] inputList = input.split("\\s+");
 	for(int x = 0; x < inputList.length; x++){
 	    if(inputList[x].equals("+")){
@@ -20,10 +19,10 @@ public class RPN{
 		stack.push(inputList[x]);
 	    }
 	}
-	System.out.println(stack.toString());
+	System.out.println("Result: " + stack.toString());
 	System.out.println("Next series of commands:");
 	Scanner sc = new Scanner(System.in);
-	calc.calculate(sc.nextLine());
+	this.calculate(sc.nextLine(), stack);
     }
 
     public static void main(String[] args){
@@ -31,7 +30,7 @@ public class RPN{
 	System.out.println("Please input a series of commands separated by spaces:");
 	System.out.println("List of valid characters: 0 1 2 3 4 5 6 7 8 9 + - * /");
 	Scanner sc = new Scanner(System.in);
-	calc.calculate(sc.nextLine());
+	calc.calculate(sc.nextLine(), new MyStack());
     }
 
 }

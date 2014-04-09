@@ -1,3 +1,5 @@
+import java.io.*;
+
 public class MyStack {
 
     private Node top;
@@ -41,6 +43,6 @@ public class MyStack {
 	    tmp += currentNode.getData() + ", ";
 	    currentNode = currentNode.getNext();
 	}
-	return tmp;
+	return tmp.substring(0,tmp.length()-2);
     }
 }
