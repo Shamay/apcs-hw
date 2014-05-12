@@ -64,7 +64,9 @@ public class BST{
 	// 2 child case
 	}else{
 	    Node temp = current.getLeft();
+            Node tempParent = null;
 	    while(temp.getRight() != null){
+		tempParent = temp;
 		temp = temp.getRight();
 	    }
 
@@ -82,11 +84,27 @@ public class BST{
 		else
 		    parent.setRight(temp);
 		while(temp.getLeft() != null){
+		    tempParent = temp;
 		    temp = temp.getLeft();
 		}
 		temp.setLeft(current.getLeft());
+		if(tempParent.getData() > temp.getData()){
+		   tempParent.setLeft(null);
+		}else{
+	           tempParent.setRight(null);
+		}
 	    }
 	}
     }
+
+    public void traverse(Node n){
+	if(n == null)
+	    return;
+	else{
+	    // depending on where the print line goes, it can be infix, prefix, or postfix
+	    System.out.print(n + ", ");
+	    traverse(n.getLeft());
+	    traverse(n.getRight());
+	}
+    }
 }
-  
