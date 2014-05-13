@@ -28,4 +28,7 @@ public class Node{
 	return right;
     }
 
+    public String toString(){
+	return "" + data;
+    }
 }
