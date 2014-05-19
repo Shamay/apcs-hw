@@ -1,0 +1,54 @@
+4/8/14
+Heap->binary tree with 2 properties:
+-> as full as possible left to right
+-> given any node n, its value v is greated than the value
+	of either of its children (maxheap)
+
+-> finding the max is the easiest function ( O(1) )
+-> removeMax: remove root, replace root with the lowest, rightest, element, and pushdown
+-> add: add element as lowest rightest leaf, sift up
+
+heapsort
+-> build a heap (nlogn), number the elements row by row, left to right
+-> the children are numbered 2n and 2n+1, parent are n/2 (in an array)
+-> sort it by taking out the max agian and again
+
+-> adding:
+-> finding median:
+-> removing median:
+
+4/13/14
+Hash Table: Typically an array based data structure where you use a hash function to convert the key to a copy index.
+
+Hash Function: Funtion that maps a key value onto another value as a database index (ex: h(x) = x % 100000)
+
+Clash/Collision: when two kets hash to the same index
+SOlutions: rehashing(Secondary function), linear probing(find an empty space)
+
+Closed Hashing -> all in the table
+insert -> worst case O(n)
+	  best case O(n)
+	   expected run time O(1)
+	-> the table is sparse, h(x) disperses data uniformly
+	-> Traversal O(n)
+
+Open Hashing -> each slot in the table refers to a linked list of items that hash to that slot
+
+5/15/14
+Lookup:
+1. TreeMap, TreeSet, HashMap, Hashset
+2. Hashmap vs Treemap speeds
+3. Does Java have a built-in heap? PriorityQueue
+4. Implement running median 
+
+5/19/14
+Processing is a program that quickly sets up GUI and annoting hassles in java.
+
+Constructor:
+void setup(){
+
+}
+
+void draw(){
+
+}
