@@ -1,0 +1,22 @@
+Graphs - Representations and Algorithms
+
+Adjacency Matrix: 2D array where A[i][j] represent the edge between node i and j. YOu can find if two nodes are connected directly in constant time. Weights can also be added.
+Pros: Fast neighbor check, lends inself to linear algebra matrix ops.
+Cons: Space inefficient
+
+Adjacency List: 1D Array of nodes with each element being a list containing all the nodes the particular node is connected to.
+- Slower than matrix, but more space efficient.
+
+Depth-First Search
+-maze recursive algorithm
+
+Breath-First Search
+- searching one away, two away, three away, ...
+
+Frontier: data structure to hold the nodes we haven't processed yet
+-> it is a Queue, start node on the top and mark as processed
+-> while frontier isn't empty
+	1. remove item from frontier
+	2. for each unvisited neighbor n of the node 
+		-> put n on the frontier (enqueue) and mark them unvisited
+if you use a stack rather than a queue, it behaves like a depth-first search
